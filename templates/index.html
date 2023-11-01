@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+
+<html lang="en" dir="ltr">
+    <head>
+        <meta charset="utf-8">
+        <title>Diabetes Predictor</title>
+        <link rel="shortcut icon" href="{{ url_for('static', filename='diabetes-favicon.ico') }}">
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}">
+        <script src="https://kit.fontawesome.com/5f3f547070.js" crossorigin="anonymous"></script>
+        <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+    </head>
+
+    <body>
+
+        <!-- Website Title -->
+    	<div class="container">
+            <h2 class='container-heading'><span class="heading_font">Diabetes Predictor</span></h2>
+            <div class='description'>
+    			<p>It's just a prediction; do consult with a Doctor 😊</p>
+    		</div>
+    	</div>
+
+        <!-- Text Area -->
+    	<div class="ml-container">
+    		<form action="{{ url_for('predict') }}" method="POST">
+                <table align="center">
+                    <tr>
+                        <td>
+                            <label for="pregnancies">No of Pregnancies:</label>
+                        </td>
+                        <td>
+                            <input class="form-input" type="text" name="pregnancies" placeholder="eg. 0"><br>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label for="glucose">Gulcose Leve:</label>
+                        </td>
+                        <td>
+                            <input class="form-input" type="text" name="glucose" placeholder="(mg/dL) eg. 80"><br>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label for="bloodpressure">Blood Pressure:</label>
+                        </td>
+                        <td>
+                             <input class="form-input" type="text" name="bloodpressure" placeholder="(mmHg) eg. 80"><br>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label for="skinthickness">Skin Thickness:</label>
+                        </td>
+                        <td>
+                            <input class="form-input" type="text" name="skinthickness" placeholder="(mm) eg. 20"><br>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label for="insulin">Insulin Level:</label>
+                        </td>
+                        <td>
+                            <input class="form-input" type="text" name="insulin" placeholder="(IU/mL) eg. 80"><br>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label for="bmi">Body Mass Index:</label>
+                        </td>
+                        <td>
+                            <input class="form-input" type="text" name="bmi" placeholder="(kg/m²) eg. 23.1"><br>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label for="dpf">Diabetes Pedigree Function:</label>
+                        </td>
+                        <td>
+                            <input class="form-input" type="text" name="dpf" placeholder="eg. 0.52"><br>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label for="age">Age:</label>
+                        </td>
+                        <td>
+                            <input class="form-input" type="text" name="age" placeholder="(years) eg. 34"><br>
+                        </td>
+                    </tr>
+                </table>
+        		<input type="submit" class="my-cta-button" value="Predict">
+        	</form>
+    	</div>
+
+    </body>
+</html>
